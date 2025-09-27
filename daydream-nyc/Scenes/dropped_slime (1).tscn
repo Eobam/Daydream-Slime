@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://be8fj6hwytyqn"]
+
+[ext_resource type="Script" uid="uid://blkg4h8mr3reb" path="res://Scenes/Scripts/dropped_slime.gd" id="1_4w4k2"]
+[ext_resource type="Texture2D" uid="uid://cilytgu0uyqu5" path="res://Assets/pixilart-drawing (32).svg" id="1_lbr36"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s8rj2"]
+radius = 2.9893
+height = 7.97147
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hq6h1"]
+atlas = ExtResource("1_lbr36")
+region = Rect2(0, 0, 20, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4m00t"]
+atlas = ExtResource("1_lbr36")
+region = Rect2(0, 25, 20, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msm7u"]
+atlas = ExtResource("1_lbr36")
+region = Rect2(20, 0, 20, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f82a4"]
+atlas = ExtResource("1_lbr36")
+region = Rect2(20, 25, 20, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xe1af"]
+atlas = ExtResource("1_lbr36")
+region = Rect2(40, 0, 20, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hy2te"]
+atlas = ExtResource("1_lbr36")
+region = Rect2(40, 25, 20, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lbegx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hq6h1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4m00t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msm7u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f82a4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xe1af")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hy2te")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="DroppedSlime" type="Area2D"]
+texture_filter = 1
+scale = Vector2(10, 10)
+script = ExtResource("1_4w4k2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.76801
+shape = SubResource("CapsuleShape2D_s8rj2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 0)
+rotation = 0.0695761
+scale = Vector2(0.43096304, 0.386272)
+sprite_frames = SubResource("SpriteFrames_lbegx")
+animation = &"new_animation"
+frame = 5
+frame_progress = 0.38174912

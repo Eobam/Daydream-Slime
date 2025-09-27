@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bo815yxtc1012"]
+
+[ext_resource type="PackedScene" uid="uid://c45swavfhlqdv" path="res://Scenes/animatedplayer.tscn" id="1_ebmjs"]
+[ext_resource type="PackedScene" uid="uid://c4twgimefeu0x" path="res://Scenes/droppedSlime.tscn" id="2_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://dl3hoeglq0xnu" path="res://Scenes/door.tscn" id="3_3dryh"]
+[ext_resource type="PackedScene" uid="uid://do8kyov4n3odq" path="res://Scenes/button.tscn" id="4_wowpa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxrlw"]
+size = Vector2(198, 20)
+
+[node name="Game" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [-221.0]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(0.6899307, 0.89055115)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(124, 154)
+scale = Vector2(6.190878, 9.659203)
+shape = SubResource("RectangleShape2D_qxrlw")
+
+[node name="Player" parent="." instance=ExtResource("1_ebmjs")]
+texture_filter = 1
+position = Vector2(-344, -54)
+scale = Vector2(4, 4)
+dropped_slime_scene = ExtResource("2_qxrlw")
+
+[node name="Door" parent="." instance=ExtResource("3_3dryh")]
+position = Vector2(251, -29)
+openStyle = "down"
+
+[node name="Button" parent="." node_paths=PackedStringArray("connectedDoor") instance=ExtResource("4_wowpa")]
+position = Vector2(-112, 40)
+connectedDoor = NodePath("../Door")

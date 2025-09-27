@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwitl4vqm10c0"]
+
+[ext_resource type="Texture2D" uid="uid://bbniqqxe3pos3" path="res://Assets/Black_Black__04733__90341.jpg" id="1_ejx3s"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8o1l4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2iur"]
+
+[node name="Block" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_8o1l4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.1909952, 0.6039941)
+shape = SubResource("RectangleShape2D_c2iur")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.018990966, 0.009731358)
+texture = ExtResource("1_ejx3s")
