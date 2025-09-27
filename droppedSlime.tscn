@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4twgimefeu0x"]
+
+[ext_resource type="Script" uid="uid://blkg4h8mr3reb" path="res://Scripts/dropped_slime.gd" id="1_1vtnm"]
+[ext_resource type="Texture2D" uid="uid://cda7d25snv33l" path="res://Scenes/youliveherejpg.jpg" id="2_0puox"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0puox"]
+size = Vector2(31.722582, 20)
+
+[node name="DroppedSlime" type="Area2D"]
+script = ExtResource("1_1vtnm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 3.1415927
+scale = Vector2(0.511626, -0.20595676)
+shape = SubResource("RectangleShape2D_0puox")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.047896322, 0.08417445)
+texture = ExtResource("2_0puox")
